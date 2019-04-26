@@ -22,9 +22,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         myProfileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed , tag: 0)
         addContactsVC.tabBarItem = UITabBarItem(title: "Add", image: UIImage(named: "add_user"), tag: 1)
         viewContactsVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-        
         let tabBarList = [myProfileVC, addContactsVC, viewContactsVC]
         
+        
+        setViewControllers(tabBarList, animated: false)
         self.viewControllers = tabBarList
+        
     }
 }

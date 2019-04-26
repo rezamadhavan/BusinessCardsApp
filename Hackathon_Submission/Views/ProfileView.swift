@@ -13,7 +13,7 @@ class ProfileView: UIView {
     var user: User!
     
     //View Elements
-    var name: UILabel!
+    var name: UITextField!
     var phoneNumber: UILabel!
     var email: UILabel!
     var company: UILabel!
@@ -25,9 +25,8 @@ class ProfileView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-        
-        name = UILabel()
+        name = UITextField()
+        name.isEnabled = true
         name.textColor = .black
         name.font = .systemFont(ofSize: 14)
         
@@ -45,7 +44,6 @@ class ProfileView: UIView {
         
         img = UIImageView()
         
-        
         code = UILabel()
         code.textColor = .black
         code.font = .systemFont(ofSize: 14)
@@ -56,7 +54,6 @@ class ProfileView: UIView {
         self.addSubview(company)
         self.addSubview(img)
         self.addSubview(code)
-        
         
         layoutUI()
     }
@@ -74,7 +71,6 @@ class ProfileView: UIView {
     }
     
     func layoutUI(){
-        self.backgroundColor = UIColor.red
         name.snp.makeConstraints { make in
             make.leading.top.equalToSuperview().offset(padding)
             make.height.equalTo(height)
