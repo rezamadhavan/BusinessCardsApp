@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BD93E9A0F28CCC2B7B576C /* Pods_Hackathon_Submission.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA215F0CBA77F20CD2D8D669 /* Pods_Hackathon_Submission.framework */; };
 		F597AB0D226B8B2200EFB5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB0C226B8B2200EFB5D8 /* AppDelegate.swift */; };
-		F597AB0F226B8B2200EFB5D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB0E226B8B2200EFB5D8 /* ViewController.swift */; };
 		F597AB14226B8B2600EFB5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F597AB13226B8B2600EFB5D8 /* Assets.xcassets */; };
 		F597AB17226B8B2600EFB5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */; };
 		F597AB1F226B950700EFB5D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB1E226B950700EFB5D8 /* User.swift */; };
 		F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB20226B966F00EFB5D8 /* NetworkManager.swift */; };
+		FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */; };
+		FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */; };
+		FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */; };
+		FCF6537A226CC6B50023A6D7 /* ViewContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65379226CC6B50023A6D7 /* ViewContactsViewController.swift */; };
+		FCF6537F226CCA090023A6D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF6537E226CCA090023A6D7 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28DCFEB62BAA3F706A4FFFE8 /* Pods-Hackathon_Submission.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon_Submission.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission.debug.xcconfig"; sourceTree = "<group>"; };
+		5ACA2876112C4F2E7103F553 /* Pods-Hackathon_Submission.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon_Submission.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission.release.xcconfig"; sourceTree = "<group>"; };
+		DA215F0CBA77F20CD2D8D669 /* Pods_Hackathon_Submission.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Submission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F597AB09226B8B2200EFB5D8 /* Hackathon_Submission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon_Submission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F597AB0C226B8B2200EFB5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F597AB0E226B8B2200EFB5D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F597AB13226B8B2600EFB5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F597AB16226B8B2600EFB5D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F597AB18226B8B2600EFB5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F597AB1E226B950700EFB5D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F597AB20226B966F00EFB5D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		FCF65379226CC6B50023A6D7 /* ViewContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContactsViewController.swift; sourceTree = "<group>"; };
+		FCF6537E226CCA090023A6D7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Hackathon_Submission/Views/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BD93E9A0F28CCC2B7B576C /* Pods_Hackathon_Submission.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ED6B0F9304A8D41F557EAE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28DCFEB62BAA3F706A4FFFE8 /* Pods-Hackathon_Submission.debug.xcconfig */,
+				5ACA2876112C4F2E7103F553 /* Pods-Hackathon_Submission.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C06935A94FC79B8A76C2762E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA215F0CBA77F20CD2D8D669 /* Pods_Hackathon_Submission.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F597AB00226B8B2200EFB5D8 = {
 			isa = PBXGroup;
 			children = (
 				F597AB0B226B8B2200EFB5D8 /* Hackathon_Submission */,
 				F597AB0A226B8B2200EFB5D8 /* Products */,
+				1ED6B0F9304A8D41F557EAE5 /* Pods */,
+				C06935A94FC79B8A76C2762E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +89,50 @@
 			isa = PBXGroup;
 			children = (
 				F597AB0C226B8B2200EFB5D8 /* AppDelegate.swift */,
-				F597AB0E226B8B2200EFB5D8 /* ViewController.swift */,
-				F597AB1E226B950700EFB5D8 /* User.swift */,
-				F597AB20226B966F00EFB5D8 /* NetworkManager.swift */,
+				FCF65380226CCA120023A6D7 /* Views */,
+				FCF6537B226CC6C40023A6D7 /* ViewControllers */,
+				FCF6537D226CC6EC0023A6D7 /* Utilities */,
+				FCF6537C226CC6E10023A6D7 /* Models */,
 				F597AB13226B8B2600EFB5D8 /* Assets.xcassets */,
 				F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */,
 				F597AB18226B8B2600EFB5D8 /* Info.plist */,
 			);
 			path = Hackathon_Submission;
+			sourceTree = "<group>";
+		};
+		FCF6537B226CC6C40023A6D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */,
+				FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */,
+				FCF65379226CC6B50023A6D7 /* ViewContactsViewController.swift */,
+				FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FCF6537C226CC6E10023A6D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F597AB1E226B950700EFB5D8 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCF6537D226CC6EC0023A6D7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F597AB20226B966F00EFB5D8 /* NetworkManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCF65380226CCA120023A6D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCF6537E226CCA090023A6D7 /* ProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F597AB1B226B8B2600EFB5D8 /* Build configuration list for PBXNativeTarget "Hackathon_Submission" */;
 			buildPhases = (
+				3D9DB12FC4D354E98AC799A4 /* [CP] Check Pods Manifest.lock */,
 				F597AB05226B8B2200EFB5D8 /* Sources */,
 				F597AB06226B8B2200EFB5D8 /* Frameworks */,
 				F597AB07226B8B2200EFB5D8 /* Resources */,
+				AFD1626F311100D76A2DA71E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +202,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D9DB12FC4D354E98AC799A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hackathon_Submission-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD1626F311100D76A2DA71E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F597AB05226B8B2200EFB5D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF6537A226CC6B50023A6D7 /* ViewContactsViewController.swift in Sources */,
+				FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */,
+				FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */,
+				FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */,
 				F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */,
-				F597AB0F226B8B2200EFB5D8 /* ViewController.swift in Sources */,
+				FCF6537F226CCA090023A6D7 /* ProfileView.swift in Sources */,
 				F597AB0D226B8B2200EFB5D8 /* AppDelegate.swift in Sources */,
 				F597AB1F226B950700EFB5D8 /* User.swift in Sources */,
 			);
@@ -276,6 +397,7 @@
 		};
 		F597AB1C226B8B2600EFB5D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28DCFEB62BAA3F706A4FFFE8 /* Pods-Hackathon_Submission.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,6 +416,7 @@
 		};
 		F597AB1D226B8B2600EFB5D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ACA2876112C4F2E7103F553 /* Pods-Hackathon_Submission.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

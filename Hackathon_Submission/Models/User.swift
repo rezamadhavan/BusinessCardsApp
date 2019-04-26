@@ -8,16 +8,18 @@
 
 import Foundation
 
-struct User:Decodable{
+struct User: Codable{
+    var id: Int
     var name: String
-    var phoneNumber: String
+    var phone: String
     var email: String
     var company: String
     var code: String
-    var img: String
+    var imgURL: String
     var contacts: [User]
 }
 
-struct UserDataResponse : Codable {
+struct UserDataResponse: Codable {
+    var success : Bool
     var data : User
 }
