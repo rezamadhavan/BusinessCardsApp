@@ -17,17 +17,12 @@ class MyProfileViewController: UIViewController {
         let profileView = ProfileView(frame: self.view.frame)
         self.view.addSubview(profileView)
         // Do any additional setup after loading the view.
+        
+        let user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [])
+        
+        profileView.configure(with: user)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
