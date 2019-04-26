@@ -20,8 +20,6 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         profileView = ProfileView(frame: super.view.frame)
         
         user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [])

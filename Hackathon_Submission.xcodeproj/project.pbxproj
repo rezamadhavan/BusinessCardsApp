@@ -13,6 +13,7 @@
 		F597AB17226B8B2600EFB5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */; };
 		F597AB1F226B950700EFB5D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB1E226B950700EFB5D8 /* User.swift */; };
 		F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB20226B966F00EFB5D8 /* NetworkManager.swift */; };
+		FC5505322272AB1D009B6F6C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5505312272AB1D009B6F6C /* ContactTableViewCell.swift */; };
 		FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */; };
 		FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */; };
 		FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */; };
@@ -31,6 +32,7 @@
 		F597AB18226B8B2600EFB5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F597AB1E226B950700EFB5D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F597AB20226B966F00EFB5D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FC5505312272AB1D009B6F6C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FCF6537E226CCA090023A6D7 /* ProfileView.swift */,
+				FC5505312272AB1D009B6F6C /* ContactTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */,
 				F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */,
 				FCF6537F226CCA090023A6D7 /* ProfileView.swift in Sources */,
+				FC5505322272AB1D009B6F6C /* ContactTableViewCell.swift in Sources */,
 				F597AB0D226B8B2200EFB5D8 /* AppDelegate.swift in Sources */,
 				F597AB1F226B950700EFB5D8 /* User.swift in Sources */,
 			);
