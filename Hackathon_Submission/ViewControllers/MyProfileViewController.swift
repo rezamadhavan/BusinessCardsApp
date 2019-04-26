@@ -21,8 +21,9 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
         
         profileView = ProfileView(frame: super.view.frame)
+        title = "My Profile"
         
-        user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [])
+        user = User(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [])
         
         profileView.configure(with: user)
         
@@ -36,11 +37,11 @@ class MyProfileViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         profileView.snp.makeConstraints{ make in
-            make.centerX.centerY.equalTo(self.view.center)
+            make.centerX.centerY.equalToSuperview()
             make.top.equalTo(self.view.snp_topMargin).offset(padding)
-            make.bottom.equalTo(self.view.snp_bottomMargin).offset(padding)
+            make.bottom.equalTo(self.view.snp_bottomMargin).offset(-padding)
             make.leading.equalTo(self.view.snp_leadingMargin).offset(padding)
-            make.trailing.equalTo(self.view.snp_trailingMargin).offset(padding)
+            make.trailing.equalTo(self.view.snp_trailingMargin).offset(-padding)
 
         }
     }
