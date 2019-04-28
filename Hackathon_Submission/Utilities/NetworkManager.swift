@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class NetworkManager {
+    
+    
     static func downloadPicture(imageURL: String) -> UIImage? {
         if let url = URL(string: imageURL), let data = try? Data(contentsOf: url) {
             return UIImage(data: data)

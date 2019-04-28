@@ -12,14 +12,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        //defaults
+        defaults.register(defaults: [
+            UserDefaultKeys.id.rawValue: -1,
+            UserDefaultKeys.name.rawValue: "First Last",
+            UserDefaultKeys.phone.rawValue: "123-456-7890",
+            UserDefaultKeys.email.rawValue: "email@email.com",
+            UserDefaultKeys.company.rawValue: "Company Name",
+            UserDefaultKeys.code.rawValue: "CODE12",
+            UserDefaultKeys.imgURL.rawValue: "www.image.com",
+            UserDefaultKeys.position.rawValue: "Position",
+            UserDefaultKeys.website.rawValue: "mywebsite.com"
+            ])
+        
         let mainTabBarController = MainTabBarViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: mainTabBarController )
         window?.makeKeyAndVisible()
+        
         return true
     }
 

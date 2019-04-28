@@ -24,8 +24,8 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
         title = "My Contacts"
         
         //create sample data
-        user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [])
-        let sampleContact = User.init(id: 1234, name: "Test Contact", phone: "123-456-789", email: "adfadf@gmail.com", company: "Test Company", code: "RM855", imgURL: "", contacts: [])
+        user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [], position: "Student", website: "www.reza.com")
+        let sampleContact = User.init(id: 1234, name: "Test Contact", phone: "123-456-789", email: "adfadf@gmail.com", company: "Test Company", code: "RM855", imgURL: "", contacts: [], position: "sdfsd", website:"sdfs")
         for _ in 1...10 {
             user.contacts.append(sampleContact)
         }
@@ -67,5 +67,10 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
         cell.selectionStyle = .none
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contact = contacts[indexPath.row]
+        let myProfVC = MyProfileViewController(user: contact, is_editable: false)
+        self.navigationController?.pushViewController(myProfVC, animated: false)
+    }
 }

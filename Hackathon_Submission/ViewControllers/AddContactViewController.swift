@@ -9,7 +9,11 @@
 import UIKit
 
 class AddContactViewController: UIViewController {
-
+    
+    let padding = 50
+    let smallPadding = 10
+    let standardBlue: UIColor = UIColor.init(red: 0, green: 122/256, blue: 255/256, alpha: 1)
+    
     var codeLabel: UILabel!
     var code: UITextField!
     var addButton: UIButton!
@@ -21,7 +25,7 @@ class AddContactViewController: UIViewController {
         code = UITextField()
         code.isEnabled = true
         code.textColor = .black
-        code.textAlignment = .left
+        code.textAlignment = .center
         code.font = .systemFont(ofSize: 20)
         code.borderStyle = .roundedRect
         code.backgroundColor = UIColor.lightGray
@@ -29,13 +33,15 @@ class AddContactViewController: UIViewController {
         
         codeLabel = UILabel()
         codeLabel.textColor = .black
-        codeLabel.text = "Code: "
+        codeLabel.text = "Enter Code"
+        codeLabel.textAlignment = .center
         codeLabel.font = .systemFont(ofSize: 20)
         view.addSubview(codeLabel)
         
         addButton = UIButton()
         addButton.setTitle("Add", for: .normal)
-        addButton.setTitleColor(.blue, for: .normal)
+        addButton.setTitleColor(.white, for: .normal)
+        addButton.backgroundColor = standardBlue
         view.addSubview(addButton)
         
         
@@ -45,19 +51,21 @@ class AddContactViewController: UIViewController {
     
     func setupConstraints(){
         codeLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview().offset(-40)
             make.centerY.equalToSuperview().offset(-40)
+            make.leading.equalToSuperview().offset(padding)
+            make.trailing.equalToSuperview().offset(-padding)
         }
         
         code.snp.makeConstraints { make in
-            make.leading.equalTo(codeLabel.snp.trailing)
-            make.top.equalTo(codeLabel.snp.top)
-            make.trailing.equalToSuperview().offset(-8)
+            make.top.equalTo(codeLabel.snp.bottom).offset(smallPadding)
+            make.leading.equalToSuperview().offset(padding)
+            make.trailing.equalToSuperview().offset(-padding)
         }
         
         addButton.snp.makeConstraints { make in
-            make.top.equalTo(codeLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(code.snp.bottom).offset(smallPadding)
+            make.leading.equalToSuperview().offset(padding)
+            make.trailing.equalToSuperview().offset(-padding)
         }
     }
     

@@ -15,14 +15,19 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         
-        let myProfileVC = MyProfileViewController()
+        
+        let user = User(id: 1234, name: "Person A", phone: "123-456-789", email: "abc@gmail.com", company: "Google", code: "RM855", imgURL: "", contacts: [], position: "Software Engineer", website: "abc.com")
+        
+        let myProfileVC = MyProfileViewController(user: user, is_editable: true)
         let addContactsVC = AddContactViewController()
         let viewContactsVC = ViewContactsViewController()
         
-        myProfileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed , tag: 0)
+        let navVC = UINavigationController(rootViewController: viewContactsVC)
+        
+        myProfileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user_male"), tag: 0)
         addContactsVC.tabBarItem = UITabBarItem(title: "Add", image: UIImage(named: "add_user"), tag: 1)
-        viewContactsVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-        let tabBarList = [myProfileVC, addContactsVC, viewContactsVC]
+        navVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        let tabBarList = [myProfileVC, addContactsVC, navVC]
         
         
         setViewControllers(tabBarList, animated: false)
@@ -30,3 +35,4 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
     }
 }
+

@@ -14,6 +14,7 @@
 		F597AB1F226B950700EFB5D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB1E226B950700EFB5D8 /* User.swift */; };
 		F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB20226B966F00EFB5D8 /* NetworkManager.swift */; };
 		FC5505322272AB1D009B6F6C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5505312272AB1D009B6F6C /* ContactTableViewCell.swift */; };
+		FC61D35922757965006BF433 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC61D35822757965006BF433 /* UserDefaultKeys.swift */; };
 		FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */; };
 		FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */; };
 		FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */; };
@@ -33,6 +34,7 @@
 		F597AB1E226B950700EFB5D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F597AB20226B966F00EFB5D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC5505312272AB1D009B6F6C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		FC61D35822757965006BF433 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				F597AB13226B8B2600EFB5D8 /* Assets.xcassets */,
 				F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */,
 				F597AB18226B8B2600EFB5D8 /* Info.plist */,
+				FC61D35822757965006BF433 /* UserDefaultKeys.swift */,
 			);
 			path = Hackathon_Submission;
 			sourceTree = "<group>";
@@ -107,8 +110,8 @@
 			children = (
 				FCF65373226CC4E40023A6D7 /* MainTabBarViewController.swift */,
 				FCF65375226CC6990023A6D7 /* MyProfileViewController.swift */,
-				FCF65379226CC6B50023A6D7 /* ViewContactsViewController.swift */,
 				FCF65377226CC6AA0023A6D7 /* AddContactViewController.swift */,
+				FCF65379226CC6B50023A6D7 /* ViewContactsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,18 +239,20 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC61D35922757965006BF433 /* UserDefaultKeys.swift in Sources */,
 				FCF6537A226CC6B50023A6D7 /* ViewContactsViewController.swift in Sources */,
 				FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */,
 				FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */,

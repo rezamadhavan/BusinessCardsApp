@@ -17,6 +17,8 @@ struct User: Codable{
     var code: String
     var imgURL: String
     var contacts: [User]
+    var position: String
+    var website: String
 }
 
 struct UserDataResponse: Codable {
