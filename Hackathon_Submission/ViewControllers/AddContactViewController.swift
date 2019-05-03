@@ -36,6 +36,7 @@ class AddContactViewController: UIViewController {
         addButton = UIButton()
         addButton.setTitle("Add", for: .normal)
         addButton.setTitleColor(.blue, for: .normal)
+        addButton.addTarget(self, action: #selector(addContact), for: .touchUpInside)
         view.addSubview(addButton)
         
         
@@ -61,4 +62,7 @@ class AddContactViewController: UIViewController {
         }
     }
     
+    func addContact(){
+        //TODO
+    }
 }
