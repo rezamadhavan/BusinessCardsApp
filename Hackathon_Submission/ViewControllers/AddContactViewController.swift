@@ -44,7 +44,6 @@ class AddContactViewController: UIViewController {
         addButton.backgroundColor = standardBlue
         view.addSubview(addButton)
         
-        
         setupConstraints()
         
     }
@@ -69,4 +68,7 @@ class AddContactViewController: UIViewController {
         }
     }
     
+    @objc func addContact(){
+        //TODO
+    }
 }
