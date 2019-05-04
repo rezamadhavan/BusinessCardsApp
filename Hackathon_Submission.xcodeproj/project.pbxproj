@@ -100,7 +100,6 @@
 				F597AB13226B8B2600EFB5D8 /* Assets.xcassets */,
 				F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */,
 				F597AB18226B8B2600EFB5D8 /* Info.plist */,
-				FC61D35822757965006BF433 /* UserDefaultKeys.swift */,
 			);
 			path = Hackathon_Submission;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 		FCF6537D226CC6EC0023A6D7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FC61D35822757965006BF433 /* UserDefaultKeys.swift */,
 				F597AB20226B966F00EFB5D8 /* NetworkManager.swift */,
 			);
 			path = Utilities;
