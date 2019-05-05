@@ -48,7 +48,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         
         profileView.uploadPicButton.addTarget(self, action: #selector(pressUploadPicButton), for: .touchUpInside)
         
-    
+        profileView.updateProfileButton.addTarget(self, action: #selector(pressUpdateProfileButton), for: .touchUpInside)
         
         setupConstraints()
         
@@ -81,6 +81,12 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             make.leading.equalTo(self.view.snp_leadingMargin).offset(padding)
             make.trailing.equalTo(self.view.snp_trailingMargin).offset(-padding)
 
+        }
+    }
+    
+    @objc func pressUpdateProfileButton(){
+        NetworkManager.updateUser(name: profileView.name.text!, email: profileView.email.text!, phone: profileView.phoneNumber.text!, company: profileView.company.text!, position: profileView.position.text!, website: profileView.website.text!) { (user) in
+            print(user)
         }
     }
     

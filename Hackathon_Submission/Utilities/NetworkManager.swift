@@ -50,7 +50,25 @@ class NetworkManager {
     
     static func updateUser(name: String, email: String, phone: String, company: String, position: String, website: String, completion: @escaping(User?) -> Void){
         
-            completion(nil)
+        let params: [String:String] = [
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "company": company,
+            "position": position,
+            "website": website
+        ]
+        
+        let url = "\(baseURL)/api/user/\(String(id))/"
+        Alamofire.request(url, method: .post, parameters: params, encoding: Alamofire.JSONEncoding.default, headers: [:]).validate().responseData(){
+            (response) in
+            switch response.result {
+            case .success(let data):
+                print("Updated user")
+            case .failure(let error):
+                print("Some other weird error: \(error)")
+            }
+        }
     }
     
     static func deleteContact(their_id: Int){
