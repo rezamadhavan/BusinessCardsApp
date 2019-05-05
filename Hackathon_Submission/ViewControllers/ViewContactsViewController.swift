@@ -74,6 +74,7 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
+            NetworkManager.deleteContact(their_id: self.contacts[indexPath.row].id)
             self.contacts.remove(at: indexPath.row)
             contactTableView.deleteRows(at: [indexPath], with: .fade)
         }

@@ -48,6 +48,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         
         profileView.uploadPicButton.addTarget(self, action: #selector(pressUploadPicButton), for: .touchUpInside)
         
+    
+        
         setupConstraints()
         
     }

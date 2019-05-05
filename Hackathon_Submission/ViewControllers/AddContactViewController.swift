@@ -42,6 +42,7 @@ class AddContactViewController: UIViewController {
         addButton.setTitle("Add", for: .normal)
         addButton.setTitleColor(.white, for: .normal)
         addButton.backgroundColor = standardBlue
+        addButton.addTarget(self, action: #selector(addContact), for: .touchUpInside)
         view.addSubview(addButton)
         
         setupConstraints()
@@ -69,6 +70,10 @@ class AddContactViewController: UIViewController {
     }
     
     @objc func addContact(){
-        //TODO
+        NetworkManager.addContact(their_code: code.text!){
+            (user) in
+            print(user?.name)
+        }
+        
     }
 }
