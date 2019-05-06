@@ -149,12 +149,12 @@ class NetworkManager {
         guard let imgData = image.pngData() else {
             return
         }
-        let url = "\(baseURL)/images/"
+        let url = "\(baseURL)/api/images/\(String(id))/"
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imgData, withName: "uploads", fileName: String(id) + ".png", mimeType: "image/png")
         }, to: url, method: .post, headers: [:]){
             result in
-            print(result)
+            UserDefaults.standard.set(baseURL+"/api/images/\(String(id))/", forKey: UserDefaultKeys.imgURL.rawValue)
         }
         
     }

@@ -146,7 +146,7 @@ class ProfileView: UIView {
         email.text =  user.email
         company.text = user.company
         code.text = user.code
-        img.image = user.imgURL == "www.image.com" ? NetworkManager.downloadPicture(imageURL: "https://www.guidedogs.org/wp-content/uploads/2015/05/Dog-Im-Not.jpg") : NetworkManager.downloadPicture(imageURL: user.imgURL)
+        img.image = NetworkManager.downloadPicture(imageURL: user.imgURL)
         position.text = user.position
         website.text = user.website
     }
@@ -225,11 +225,12 @@ class ProfileView: UIView {
         phoneNumberLabel.text = "📞 "
         websiteLabel.text = "🌎 "
 
-        img.sizeThatFits(CGSize(width: 200, height: 200))
         
         img.snp.makeConstraints{ make in
                 make.leading.equalTo(self.snp.centerX)
                 make.centerY.equalToSuperview()
+                make.width.equalToSuperview().dividedBy(2)
+                make.height.equalToSuperview()
         }
         
         name.snp.makeConstraints { make in

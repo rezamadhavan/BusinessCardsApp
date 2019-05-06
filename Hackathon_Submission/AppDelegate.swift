@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultKeys.email.rawValue: "email@email.com",
             UserDefaultKeys.company.rawValue: "Company Name",
             UserDefaultKeys.code.rawValue: "CODE12",
-            UserDefaultKeys.imgURL.rawValue: "www.image.com",
+            UserDefaultKeys.imgURL.rawValue: "https://cdn.vox-cdn.com/thumbor/Pqr1EPFp38psKiqgIKijbJQFZaQ=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/16208003/sonic.jpg",
             UserDefaultKeys.position.rawValue: "Position",
             UserDefaultKeys.website.rawValue: "mywebsite.com"
             ])
@@ -42,15 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if let newuser = user {
                         self.defaults.set(newuser.id, forKey: UserDefaultKeys.id.rawValue)
                         self.defaults.set(newuser.code, forKey: UserDefaultKeys.code.rawValue)
-                        
                     }
                     else {
                         print("Failure to connect")
                     }
                     
+                    group.leave()
                 }
             }
-            group.leave()
+            else{
+                group.leave()
+            }
         }
         
         group.notify(queue: .main){
