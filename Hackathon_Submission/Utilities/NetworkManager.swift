@@ -48,7 +48,7 @@ class NetworkManager {
         }
     }
     
-    static func updateUser(name: String, email: String, phone: String, company: String, position: String, website: String, completion: @escaping(User?) -> Void){
+    static func updateUser(name: String, email: String, phone: String, company: String, position: String, website: String, completion: @escaping(User?,String) -> Void){
         
         let params: [String:String] = [
             "name": name,
@@ -64,47 +64,56 @@ class NetworkManager {
             (response) in
             switch response.result {
             case .success(let data):
-                print("Updated user")
-            case .failure(let error):
-                print("Some other weird error: \(error)")
+                let jsonDecoder = JSONDecoder()
+                if let user = try? jsonDecoder.decode(UserDataResponse.self, from: data) {
+                    completion(user.data, "Successful")
+                } else if let errorRes = try? jsonDecoder.decode(ErrorResponse.self, from: data){
+                    completion(nil,errorRes.error)
+                } else {
+                    completion(nil, "Unexpected error. Try again.")
+                }
+            case .failure( _):
+                completion(nil, "Unexpected error. Try again.")
             }
         }
     }
     
-    static func deleteContact(their_id: Int){
+    static func deleteContact(their_id: Int, completion: @escaping(String) -> Void){
         let url = "\(baseURL)/api/user/\(String(id))/\(String(their_id))"
         Alamofire.request(url, method: .delete, parameters: [:], encoding: Alamofire.JSONEncoding.default, headers: [:]).validate().responseData(){
             (response) in
             switch response.result {
             case .success(let data):
-                print("Deleted user")
-            case .failure(let error):
-                print("Some other weird error: \(error)")
+                let jsonDecoder = JSONDecoder()
+                if (try? jsonDecoder.decode(UserDataResponse.self, from: data)) != nil {
+                    completion("Successful")
+                } else if let errorRes = try? jsonDecoder.decode(ErrorResponse.self, from: data){
+                    completion(errorRes.error)
+                } else {
+                    completion("Unexpected error. Try again.")
+                }
+            case .failure( _):
+                completion("Unexpected error. Try again.")
             }
         }
     }
     
-    static func addContact(their_code: String, completion: @escaping (User?)->Void){
+    static func addContact(their_code: String, completion: @escaping (String)->Void){
         let url = "\(baseURL)/api/user/\(String(id))/\(their_code)/"
         Alamofire.request(url, method: .post, parameters: [:], encoding: Alamofire.JSONEncoding.default, headers: [:]).validate().responseData(){
             response in
             switch response.result {
             case .success(let data):
                 let jsonDecoder = JSONDecoder()
-                if let userRes = try? jsonDecoder.decode(UserDataResponse.self, from: data) {
-                    if userRes.success {
-                        completion(userRes.data)
-                    }
-                    else {
-                        print("Got through server but invalid request")
-                        completion(nil)
-                    }
+                if (try? jsonDecoder.decode(UserDataResponse.self, from: data)) != nil {
+                    completion("Successful")
+                } else if let errorRes = try? jsonDecoder.decode(ErrorResponse.self, from: data){
+                    completion(errorRes.error)
                 } else {
-                    print("JSON parser Error")
-                    completion(nil)
+                    completion("Unexpected error. Try again.")
                 }
-            case .failure(let error):
-                print("Some other weird error: \(error)")
+            case .failure( _):
+                completion("Unexpected error. Try again.")
             }
         }
     }
@@ -114,5 +123,39 @@ class NetworkManager {
             return UIImage(data: data)
         }
         return nil
+    }
+
+    static func getContacts(completion: @escaping ([User]?, String) -> Void){
+        let url = "\(baseURL)/api/user/\(String(id))/"
+        Alamofire.request(url, method: .post, parameters: [:], encoding: Alamofire.JSONEncoding.default, headers: [:]).validate().responseData(){
+            response in
+            switch response.result {
+            case .success(let data):
+                let jsonDecoder = JSONDecoder()
+                if let userRes = try? jsonDecoder.decode(UserDataResponse.self, from: data) {
+                    completion(userRes.data.contacts, "Successful")
+                } else if let errorRes = try? jsonDecoder.decode(ErrorResponse.self, from: data){
+                    completion(nil, errorRes.error)
+                } else {
+                    completion(nil, "Unexpected error. Try again.")
+                }
+            case .failure( _):
+                completion(nil, "Unexpected error. Try again.")
+            }
+        }
+    }
+    
+    static func uploadPicture(image: UIImage){
+        guard let imgData = image.pngData() else {
+            return
+        }
+        let url = "\(baseURL)/images/"
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData, withName: "uploads", fileName: String(id) + ".png", mimeType: "image/png")
+        }, to: url, method: .post, headers: [:]){
+            result in
+            print(result)
+        }
+        
     }
 }

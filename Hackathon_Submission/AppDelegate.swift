@@ -32,26 +32,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultKeys.website.rawValue: "mywebsite.com"
             ])
         
-        //if user not created then its id will be -1 by default
-        if(defaults.integer(forKey: UserDefaultKeys.id.rawValue) == -1){
-            NetworkManager.create_user(name: defaults.string(forKey: UserDefaultKeys.name.rawValue)!, email: defaults.string(forKey: UserDefaultKeys.email.rawValue)!, phone: defaults.string(forKey: UserDefaultKeys.phone.rawValue)!, company: defaults.string(forKey: UserDefaultKeys.company.rawValue)!, position: defaults.string(forKey: UserDefaultKeys.position.rawValue)!, website: defaults.string(forKey: UserDefaultKeys.website.rawValue)!) {
-                (user) in
-                if let newuser = user {
-                    self.defaults.set(newuser.id, forKey: UserDefaultKeys.id.rawValue)
-                    self.defaults.set(newuser.code, forKey: UserDefaultKeys.code.rawValue)
+        let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.main.async {
+            //if user not created then its id will be -1 by default
+            if(self.defaults.integer(forKey: UserDefaultKeys.id.rawValue) == -1){
+                NetworkManager.create_user(name: self.defaults.string(forKey: UserDefaultKeys.name.rawValue)!, email: self.defaults.string(forKey: UserDefaultKeys.email.rawValue)!, phone: self.defaults.string(forKey: UserDefaultKeys.phone.rawValue)!, company: self.defaults.string(forKey: UserDefaultKeys.company.rawValue)!, position: self.defaults.string(forKey: UserDefaultKeys.position.rawValue)!, website: self.defaults.string(forKey: UserDefaultKeys.website.rawValue)!) {
+                    (user) in
+                    if let newuser = user {
+                        self.defaults.set(newuser.id, forKey: UserDefaultKeys.id.rawValue)
+                        self.defaults.set(newuser.code, forKey: UserDefaultKeys.code.rawValue)
+                        
+                    }
+                    else {
+                        print("Failure to connect")
+                    }
                     
                 }
-                else {
-                    print("Failure to connect")
-                }
-                
             }
+            group.leave()
         }
         
-        let mainTabBarController = MainTabBarViewController()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: mainTabBarController )
-        window?.makeKeyAndVisible()
+        group.notify(queue: .main){
+            let mainTabBarController = MainTabBarViewController()
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = UINavigationController(rootViewController: mainTabBarController )
+            self.window?.makeKeyAndVisible()
+        }
         
         return true
     }

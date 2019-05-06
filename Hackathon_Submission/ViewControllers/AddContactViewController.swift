@@ -71,9 +71,15 @@ class AddContactViewController: UIViewController {
     
     @objc func addContact(){
         NetworkManager.addContact(their_code: code.text!){
-            (user) in
-            print(user?.name)
+            (status) in
+                self.alert(status: status)
         }
         
+    }
+    
+    func alert(status: String){
+        let alert = UIAlertController(title: "Status", message: status, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

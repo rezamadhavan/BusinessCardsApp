@@ -18,26 +18,50 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
     var contacts : [User] = []
     let contactReuseId = "contactReuseId"
     
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkManager.getContacts(){
+            (contacts, status) in
+            if contacts != nil {
+                self.contacts = contacts!
+            }
+            else {
+                self.alert(status: status)
+            }
+        }
+        if (contactTableView != nil) {
+            self.contactTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blue
         title = "My Contacts"
         
-        //create sample data
-        user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [], position: "Student", website: "www.reza.com")
-        let sampleContact = User.init(id: 1234, name: "Test Contact", phone: "123-456-789", email: "adfadf@gmail.com", company: "Test Company", code: "RM855", imgURL: "", contacts: [], position: "sdfsd", website:"sdfs")
-        for _ in 1...10 {
-            user.contacts.append(sampleContact)
-        }
-        
-        contacts = user.contacts
-        
+//        //create sample data
+//        user = User.init(id: 1234, name: "Reza Madhavan", phone: "123-456-789", email: "adfadf@gmail.com", company: "Cornell University", code: "RM855", imgURL: "", contacts: [], position: "Student", website: "www.reza.com")
+//        let sampleContact = User.init(id: 1234, name: "Test Contact", phone: "123-456-789", email: "adfadf@gmail.com", company: "Test Company", code: "RM855", imgURL: "", contacts: [], position: "sdfsd", website:"sdfs")
+//        for _ in 1...10 {
+//            user.contacts.append(sampleContact)
+//        }
+//
+//        contacts = user.contacts
+//
         contactTableView = UITableView()
         contactTableView.register(ContactTableViewCell.self, forCellReuseIdentifier: contactReuseId)
         contactTableView.backgroundColor = UIColor.white
         contactTableView.delegate = self
         contactTableView.dataSource = self
-        
+        NetworkManager.getContacts(){
+            (contacts, status) in
+            if contacts != nil {
+                self.contacts = contacts!
+            }
+            else {
+                self.alert(status: status)
+            }
+        }
+        contactTableView.reloadData()
         view.addSubview(contactTableView)
         setupConstraints()
     }
@@ -74,7 +98,10 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            NetworkManager.deleteContact(their_id: self.contacts[indexPath.row].id)
+            NetworkManager.deleteContact(their_id: self.contacts[indexPath.row].id){
+                (status) in
+                self.alert(status: status)
+            }
             self.contacts.remove(at: indexPath.row)
             contactTableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -83,5 +110,11 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
         let contact = contacts[indexPath.row]
         let myProfVC = MyProfileViewController(user: contact, is_editable: false)
         self.navigationController?.pushViewController(myProfVC, animated: false)
+    }
+    
+    func alert(status: String){
+        let alert = UIAlertController(title: "Status", message: status, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

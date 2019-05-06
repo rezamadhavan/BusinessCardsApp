@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42BD93E9A0F28CCC2B7B576C /* Pods_Hackathon_Submission.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA215F0CBA77F20CD2D8D669 /* Pods_Hackathon_Submission.framework */; };
+		F53AB372227FA8EE00605AEC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AB371227FA8EE00605AEC /* Error.swift */; };
+		F53AB374227FAF5000605AEC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AB373227FAF5000605AEC /* AppData.swift */; };
 		F597AB0D226B8B2200EFB5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597AB0C226B8B2200EFB5D8 /* AppDelegate.swift */; };
 		F597AB14226B8B2600EFB5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F597AB13226B8B2600EFB5D8 /* Assets.xcassets */; };
 		F597AB17226B8B2600EFB5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F597AB15226B8B2600EFB5D8 /* LaunchScreen.storyboard */; };
@@ -26,6 +28,8 @@
 		28DCFEB62BAA3F706A4FFFE8 /* Pods-Hackathon_Submission.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon_Submission.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission.debug.xcconfig"; sourceTree = "<group>"; };
 		5ACA2876112C4F2E7103F553 /* Pods-Hackathon_Submission.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon_Submission.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon_Submission/Pods-Hackathon_Submission.release.xcconfig"; sourceTree = "<group>"; };
 		DA215F0CBA77F20CD2D8D669 /* Pods_Hackathon_Submission.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Submission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53AB371227FA8EE00605AEC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		F53AB373227FAF5000605AEC /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F597AB09226B8B2200EFB5D8 /* Hackathon_Submission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon_Submission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F597AB0C226B8B2200EFB5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F597AB13226B8B2600EFB5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F597AB1E226B950700EFB5D8 /* User.swift */,
+				F53AB371227FA8EE00605AEC /* Error.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				FC61D35822757965006BF433 /* UserDefaultKeys.swift */,
 				F597AB20226B966F00EFB5D8 /* NetworkManager.swift */,
+				F53AB373227FAF5000605AEC /* AppData.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				FC61D35922757965006BF433 /* UserDefaultKeys.swift in Sources */,
 				FCF6537A226CC6B50023A6D7 /* ViewContactsViewController.swift in Sources */,
 				FCF65376226CC6990023A6D7 /* MyProfileViewController.swift in Sources */,
+				F53AB372227FA8EE00605AEC /* Error.swift in Sources */,
 				FCF65374226CC4E40023A6D7 /* MainTabBarViewController.swift in Sources */,
 				FCF65378226CC6AA0023A6D7 /* AddContactViewController.swift in Sources */,
 				F597AB21226B966F00EFB5D8 /* NetworkManager.swift in Sources */,
@@ -272,6 +279,7 @@
 				FC5505322272AB1D009B6F6C /* ContactTableViewCell.swift in Sources */,
 				F597AB0D226B8B2200EFB5D8 /* AppDelegate.swift in Sources */,
 				F597AB1F226B950700EFB5D8 /* User.swift in Sources */,
+				F53AB374227FAF5000605AEC /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

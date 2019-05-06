@@ -44,6 +44,7 @@ class ProfileView: UIView {
         name.textColor = .black
         name.textAlignment = .left
         name.font = .systemFont(ofSize: 20)
+        name.autocapitalizationType = .none
         
         nameLabel = UILabel()
         nameLabel.textColor = .black
@@ -55,6 +56,7 @@ class ProfileView: UIView {
         position.textColor = .black
         position.textAlignment = .left
         position.font = .systemFont(ofSize: 20)
+        position.autocapitalizationType = .none
         
         positionLabel = UILabel()
         positionLabel.textColor = .black
@@ -78,6 +80,7 @@ class ProfileView: UIView {
         email.isEnabled = true
         email.textAlignment = .left
         email.font = .systemFont(ofSize: 20)
+        email.autocapitalizationType = .none
         
         emailLabel = UILabel()
         emailLabel.textColor = .black
@@ -89,6 +92,7 @@ class ProfileView: UIView {
         website.isEnabled = true
         website.textAlignment = .left
         website.font = .systemFont(ofSize: 20)
+        website.autocapitalizationType = .none
         
         websiteLabel = UILabel()
         websiteLabel.textColor = .black
@@ -101,6 +105,7 @@ class ProfileView: UIView {
         company.isEnabled = true
         company.textAlignment = .left
         company.font = .systemFont(ofSize: 20)
+        company.autocapitalizationType = .none
         
         companyLabel = UILabel()
         companyLabel.textColor = .black
@@ -141,7 +146,7 @@ class ProfileView: UIView {
         email.text =  user.email
         company.text = user.company
         code.text = user.code
-        img.image = NetworkManager.downloadPicture(imageURL: "https://www.guidedogs.org/wp-content/uploads/2015/05/Dog-Im-Not.jpg")
+        img.image = user.imgURL == "www.image.com" ? NetworkManager.downloadPicture(imageURL: "https://www.guidedogs.org/wp-content/uploads/2015/05/Dog-Im-Not.jpg") : NetworkManager.downloadPicture(imageURL: user.imgURL)
         position.text = user.position
         website.text = user.website
     }
@@ -175,7 +180,6 @@ class ProfileView: UIView {
         phoneNumber.isEnabled = true
         email.isEnabled = true
         company.isEnabled = true
-        code.isEnabled = true
         position.isEnabled = true
         website.isEnabled = true
     }
@@ -185,7 +189,6 @@ class ProfileView: UIView {
         phoneNumber.isEnabled = false
         email.isEnabled = false
         company.isEnabled = false
-        code.isEnabled = false
         position.isEnabled = false
         website.isEnabled = false
     }
@@ -221,7 +224,7 @@ class ProfileView: UIView {
         emailLabel.text = "📧 "
         phoneNumberLabel.text = "📞 "
         websiteLabel.text = "🌎 "
-        
+
         img.sizeThatFits(CGSize(width: 200, height: 200))
         
         img.snp.makeConstraints{ make in
@@ -306,12 +309,14 @@ class ProfileView: UIView {
         emailLabel.text = "Email: "
         phoneNumberLabel.text = "Phone: "
         websiteLabel.text = "Website: "
-        
-        img.sizeThatFits(CGSize(width: 200, height: 200))
+//
+//        img.sizeThatFits(CGSize(width: 100, height: 100))
         
         img.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalTo(150)
+            make.top.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(2.5)
         }
         
         uploadPicButton.snp.makeConstraints{ make in

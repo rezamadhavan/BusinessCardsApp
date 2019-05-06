@@ -27,12 +27,13 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let addContactsVC = AddContactViewController()
         let viewContactsVC = ViewContactsViewController()
         
-        let navVC = UINavigationController(rootViewController: viewContactsVC)
+        let navVC1 = UINavigationController(rootViewController: myProfileVC)
+        let navVC2 = UINavigationController(rootViewController: viewContactsVC)
         
         myProfileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user_male"), tag: 0)
         addContactsVC.tabBarItem = UITabBarItem(title: "Add", image: UIImage(named: "add_user"), tag: 1)
-        navVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-        let tabBarList = [myProfileVC, addContactsVC, navVC]
+        navVC2.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        let tabBarList = [navVC1, addContactsVC, navVC2]
         
         
         setViewControllers(tabBarList, animated: false)

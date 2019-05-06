@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate {
+class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let defaults = UserDefaults.standard
 
     let screenRect = UIScreen.main.bounds
     
@@ -32,6 +34,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         
         profileView = ProfileView(frame: super.view.frame)
         title = "Profile"
@@ -76,7 +80,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         
         profileView.snp.makeConstraints{ make in
             make.centerX.centerY.equalToSuperview()
-            make.top.equalTo(self.view.snp_topMargin).offset(padding)
+            make.top.equalTo(self.view.snp_topMargin)
             make.bottom.equalTo(self.view.snp_bottomMargin).offset(-padding)
             make.leading.equalTo(self.view.snp_leadingMargin).offset(padding)
             make.trailing.equalTo(self.view.snp_trailingMargin).offset(-padding)
@@ -85,9 +89,15 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @objc func pressUpdateProfileButton(){
-        NetworkManager.updateUser(name: profileView.name.text!, email: profileView.email.text!, phone: profileView.phoneNumber.text!, company: profileView.company.text!, position: profileView.position.text!, website: profileView.website.text!) { (user) in
-            print(user)
+
+        NetworkManager.updateUser(name: profileView.name.text!, email: profileView.email.text!, phone: profileView.phoneNumber.text!, company: profileView.company.text!, position: profileView.position.text!, website: profileView.website.text!) { (user, status) in
+            if let updated_user = user {
+                AppData.updateUser(user: updated_user)
+            }
+            
+            self.alert(status: status)
         }
+        NetworkManager.uploadPicture(image: profileView.img.image!)
     }
     
     //image uploading
@@ -107,5 +117,11 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func alert(status: String){
+        let alert = UIAlertController(title: "Status", message: status, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
