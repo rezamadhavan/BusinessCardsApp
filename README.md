@@ -13,6 +13,12 @@ https://drive.google.com/drive/folders/1mIG-23LJ2mZvkIjQiBoml0G6KRE7kQWT?usp=sha
 
 **Description:** This app takes a traditional form of professional business conduct, the business card, into a more practical and modern design. In one page, we have a display of a simple business card, with one's picture, name, email, phone number, company, position, website, and unique code clearly visible. We imagined this page to be for any users that wanted to display their information for others like in a career fair. There is also a feature to add other users into your contacts using their distinct code. Your added contacts would appear in another tab, which lists basic information about each of your contacts. This would be the core networking component of this app, where one can connect with others using the app. This would be useful in a professional environment where passing a simple code can get you all relevant information about an associate.   
 
+**Features:** 
+- Add people to your contacts using their code. (Look at our screenshots for some codes)
+- Edit you own business card and press the update button when finished.
+- Rotate the phone to give you a nicer business card look. (when in profile view)
+- View your contacts and delete them.
+
 **How this app meets requirements:**  
 
 For backend, the requirements were:
